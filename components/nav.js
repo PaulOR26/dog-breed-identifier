@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Pressable, Text, Alert } from 'react-native';
+import { StyleSheet, View, Text, Alert, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { snap } from '../utils/camera.utils';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -8,7 +8,7 @@ import { faHistory, faCamera, faDog } from '@fortawesome/free-solid-svg-icons';
 const Nav = ({ navigation, state, camera, setCurrentDog }) => {
   return (
     <View style={styles.container}>
-      <Pressable
+      <TouchableOpacity
         onPress={() => {
           setCurrentDog(null);
           navigation.navigate('History', { navFrom: 'notsnap' });
@@ -21,8 +21,8 @@ const Nav = ({ navigation, state, camera, setCurrentDog }) => {
           style={styles.icon}
           icon={faHistory}
         ></FontAwesomeIcon>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         onPress={() => {
           if (state.routeNames[state.index] === 'Home') {
             snap(camera, navigation, setCurrentDog).then((dogObject) => {
@@ -40,8 +40,8 @@ const Nav = ({ navigation, state, camera, setCurrentDog }) => {
           style={styles.icon}
           icon={faCamera}
         ></FontAwesomeIcon>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         onPress={() => {
           Alert.alert(
             'DogTags',
@@ -53,18 +53,18 @@ const Nav = ({ navigation, state, camera, setCurrentDog }) => {
       >
         <Text style={styles.buttonText}>DogTags</Text>
         <FontAwesomeIcon
-          size={40}
+          size={33}
           style={styles.icon}
           icon={faDog}
         ></FontAwesomeIcon>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: '15%',
+    height: '10%',
     width: '100%',
     backgroundColor: '#008080',
     flexDirection: 'row',
@@ -78,6 +78,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#f5fffa',
     marginTop: '1%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   photoButton: {
     width: '40%',
@@ -86,17 +90,23 @@ const styles = StyleSheet.create({
     marginTop: '1%',
     borderWidth: 1,
     borderColor: '#f5fffa',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
 
     borderRadius: 5,
   },
   buttonText: {
-    padding: 8,
+    padding: 4,
     alignSelf: 'center',
     fontWeight: '500',
+    fontSize: 10,
   },
   icon: {
     alignSelf: 'center',
     color: '#ffebcd',
+    marginBottom: 5,
   },
   iconDog: {
     alignSelf: 'center',
@@ -111,6 +121,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#f5fffa',
     marginTop: '1%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

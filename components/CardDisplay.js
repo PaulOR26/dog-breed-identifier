@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
   },
   stockImage: {
     borderRadius: 50,
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
     alignSelf: 'flex-end',
     borderWidth: 1,
     borderColor: 'black',

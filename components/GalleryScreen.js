@@ -60,35 +60,26 @@ const GalleryScreen = ({ setCurrentDog }) => {
 };
 const styles = StyleSheet.create({
   contentContainer: {
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#008080',
     flexDirection: 'row',
     flexWrap: 'wrap',
     padding: 10,
   },
-  title: {
-    flex: 1,
-    color: 'white',
-    flexGrow: 1,
-    position: 'absolute',
-    paddingTop: 45,
-    paddingBottom: 20,
-  },
+
   scrollView: {
     height: '100%',
-    width: '98%',
-    margin: 20,
+    width: '100%',
+    marginTop: 0,
     alignSelf: 'center',
     padding: 20,
-    borderWidth: 5,
-    borderRadius: 5,
-    borderColor: 'black',
+    paddingTop: 30,
     backgroundColor: '#008080',
   },
   image: {
-    width: 105,
-    height: 105,
+    width: 90,
+    height: 90,
     margin: 3,
     borderRadius: 5,
     borderWidth: 1,

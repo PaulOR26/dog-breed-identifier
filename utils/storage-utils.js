@@ -33,6 +33,10 @@ export const readDogObject = async (dogUri) => {
 
 export const readDirectory = async () => {
   const dogObjectsArray = await FileSystem.readDirectoryAsync(dogsDir);
+  const directoryInfo = await FileSystem.getInfoAsync(dogsDir);
+  if (!directoryInfo.exist) {
+    await FileSystem.makeDirectoryAsync(dogsDir, { intermediates: true });
+  }
   const dogPromises = dogObjectsArray.map((dogFile) => {
     return FileSystem.readAsStringAsync(`${dogsDir}${dogFile}`).then(
       (result) => {
