@@ -4,7 +4,9 @@
 
 This was a project between [Sam-Jaya](https://github.com/Sam-Jaya), [lkelsall](https://github.com/lkelsall), [Fieldy618](https://github.com/Fieldy618) and [paulor26](https://github.com/PaulOR26).
 
-The aim was to build a mobile app that uses machine learning technology to identify a dog breed from a photo of the dog.
+The aim was to build a mobile app that uses machine learning technology to identify a dog breed from a photo of the dog. The app also stores a history of the user's dog cards.
+
+![](dogtagspicsmall.png)
 
 ## Technologies
 
