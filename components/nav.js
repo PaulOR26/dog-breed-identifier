@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Pressable, Text } from 'react-native';
+import { StyleSheet, View, Pressable, Text, Alert } from 'react-native';
 import PropTypes from 'prop-types';
 import { snap } from '../utils/camera.utils';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -41,20 +41,30 @@ const Nav = ({ navigation, state, camera, setCurrentDog }) => {
           icon={faCamera}
         ></FontAwesomeIcon>
       </Pressable>
-      <View style={styles.dogIconView}>
+      <Pressable
+        onPress={() => {
+          Alert.alert(
+            'DogTags',
+            'Welcome to DogTags!\nTake dog snaps\nSave dog cards\nHave fun! 🐶',
+            [{ text: 'Get Started!' }]
+          );
+        }}
+        style={styles.historyButton}
+      >
+        <Text style={styles.buttonText}>DogTags</Text>
         <FontAwesomeIcon
           size={40}
-          style={styles.iconDog}
+          style={styles.icon}
           icon={faDog}
         ></FontAwesomeIcon>
-      </View>
+      </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: '10%',
+    height: '15%',
     width: '100%',
     backgroundColor: '#008080',
     flexDirection: 'row',
